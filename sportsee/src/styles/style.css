@@ -1,0 +1,104 @@
+@font-face {
+  font-family: Roboto;
+  src: url(/src/styles/font/Roboto/Roboto-Medium.ttf);
+}
+body {
+  font-family: Roboto;
+}
+
+.sportsee-header {
+  max-width: 1024px;
+  display: grid;
+  grid-template-columns: 3.5fr 9fr;
+  background-color: black;
+  padding: 1em;
+}
+.sportsee-header #logo {
+  width: 178px;
+  height: 60.93px;
+}
+.sportsee-header .header-nav {
+  margin-top: 1em;
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr 2fr;
+}
+.sportsee-header .header-nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 24px;
+}
+
+.vertical-layout {
+  width: 117px;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+}
+.vertical-layout .container-img-vertical-layout {
+  margin-top: 8em;
+}
+.vertical-layout .container-img-vertical-layout .img-vertical-layout {
+  width: 64px;
+  height: 64px;
+  margin: 0em 1.5em 1.5em 1.5em;
+}
+.vertical-layout .copyright {
+  color: white;
+  margin: 3em 0em 3em 3em;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.main {
+  display: flex;
+}
+.main .user-welcome {
+  margin-left: 5em;
+}
+.main .user-welcome h1 {
+  font-size: 48px;
+}
+.main .user-welcome h1 span {
+  color: red;
+}
+.main .user-welcome p {
+  font-size: 18px;
+}
+
+.charts {
+  width: 850px;
+  margin: 5em 0em 0em 5em;
+}
+.charts .container-daily-activity {
+  width: 835px;
+  background-color: #fbfbfb;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+  border-radius: 5px;
+}
+.charts .container-daily-activity h2 {
+  font-size: 15px;
+  position: absolute;
+  margin: 0.5em 0em 0em 2em;
+}
+.charts .tooltip {
+  background-color: red;
+  color: white;
+  font-size: 11px;
+  padding: 0.5em 1em 0.5em 1em;
+}
+.charts .recharts-legend-item-text {
+  color: #9b9eac;
+  font-size: 14px;
+}
+
+.container-duration-sessions {
+  background-color: red;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+  border-radius: 5px;
+}
+.container-duration-sessions h2 {
+  font-size: 15px;
+  color: white;
+}
+
+/*# sourceMappingURL=style.css.map */

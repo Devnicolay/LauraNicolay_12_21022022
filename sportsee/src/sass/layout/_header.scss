@@ -1,0 +1,21 @@
+.sportsee-header {
+  max-width: 1024px;
+  display: grid;
+  grid-template-columns: 3.5fr 9fr;
+  background-color: black;
+  padding: 1em;
+  #logo {
+    width: 178px;
+    height: 60.93px;
+  }
+  .header-nav {
+    margin-top: 1em;
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 2fr;
+    a {
+      text-decoration: none;
+      color: white;
+      font-size: 24px;
+    }
+  }
+}

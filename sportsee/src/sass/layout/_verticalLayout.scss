@@ -1,0 +1,20 @@
+.vertical-layout {
+  width: 117px;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  .container-img-vertical-layout {
+    margin-top: 8em;
+    .img-vertical-layout {
+      width: 64px;
+      height: 64px;
+      margin: 0em 1.5em 1.5em 1.5em;
+    }
+  }
+  .copyright {
+    color: white;
+    margin: 3em 0em 3em 3em;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
+}

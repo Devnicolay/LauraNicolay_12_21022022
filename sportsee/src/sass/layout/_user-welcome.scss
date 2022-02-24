@@ -1,0 +1,15 @@
+.main {
+  display: flex;
+  .user-welcome {
+    margin-left: 5em;
+    h1 {
+      font-size: 48px;
+    }
+    h1 span {
+      color: red;
+    }
+    p {
+      font-size: 18px;
+    }
+  }
+}
