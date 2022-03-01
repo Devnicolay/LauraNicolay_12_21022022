@@ -1,0 +1,17 @@
+.container-main {
+  .container-charts-cards {
+    display: flex;
+    width: auto;
+    .charts {
+      width: 850px;
+      margin: 3em 0em 0em 5em;
+      grid-gap: 10px;
+    }
+    .charts-square {
+      display: flex;
+      justify-content: space-between;
+      width: 835px;
+      margin-top: 2em;
+    }
+  }
+}

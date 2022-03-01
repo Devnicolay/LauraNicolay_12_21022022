@@ -57,7 +57,7 @@ function DailyActivity() {
   return (
     <div className="container-daily-activity">
       <h2>Activité quotidienne</h2>
-      <ResponsiveContainer aspect={3} background="#c4c4c4">
+      <ResponsiveContainer width="100%" height="100%" background="#c4c4c4">
         <BarChart
           width={500}
           height={300}
@@ -77,10 +77,22 @@ function DailyActivity() {
             tickFormatter={(day) => new Date(day).getDate()}
           />
           <YAxis
+            dataKey="kilogram"
+            yAxisId="kilogram"
             orientation="right"
+            tickMargin={30}
             tick={{ fill: "#9B9EAC" }}
             tickLine={false}
-            tickCount={3}
+            axisLine={false}
+            domain={["dataMin-3", "dataMax+3"]}
+            tickCount={4}
+          />
+          <YAxis
+            hide
+            dataKey="calories"
+            yAxisId="calories"
+            orientation="right"
+            domain={[0, "dataMax+5"]}
           />
           <Tooltip content={<CustomToolTip />} />
           <Legend
@@ -94,6 +106,7 @@ function DailyActivity() {
           <Bar
             name="Poids (kg)"
             dataKey="kilogram"
+            yAxisId="kilogram"
             fill="#000000"
             barSize={7}
             radius={[3.5, 3.5, 0, 0]}
@@ -101,6 +114,7 @@ function DailyActivity() {
           <Bar
             name="Calories brûlées (kcal)"
             dataKey="calories"
+            yAxisId="calories"
             fill="#ff0000"
             barSize={7}
             radius={[3.5, 3.5, 0, 0]}

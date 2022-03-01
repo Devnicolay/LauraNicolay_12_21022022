@@ -1,5 +1,12 @@
 import DailyActivity from "../components/Chart/dailyActivity";
 import DurationSession from "../components/Chart/durationSessions";
+import Performance from "../components/Chart/performance";
+import Score from "../components/Chart/score";
+import Card from "../components/cards/card";
+import calorieIcon from "../assets/calories-icon.png";
+import proteinIcon from "../assets/protein-icon.png";
+import carbIcon from "../assets/carbs-icon.png";
+import lipidIcon from "../assets/fat-icon.png";
 
 const USER_MAIN_DATA = [
   {
@@ -21,16 +28,48 @@ const USER_MAIN_DATA = [
 
 function Home() {
   return (
-    <div>
+    <div className="container-main">
       <div className="user-welcome">
         <h1>
           Bonjour <span>{USER_MAIN_DATA[0].userInfos.firstName}</span>
         </h1>
         <p>Félicitation! Vous avez explosé vos objectifs hier 👏</p>
       </div>
-      <div className="charts">
-        <DailyActivity />
-        <DurationSession />
+      <div className="container-charts-cards">
+        <div className="charts">
+          <DailyActivity />
+          <div className="charts-square">
+            <DurationSession />
+            <Performance />
+            <Score />
+          </div>
+        </div>
+        <div className="cards">
+          <Card
+            img={calorieIcon}
+            numberUnit={USER_MAIN_DATA[0].keyData.calorieCount}
+            unit={"kCal"}
+            categorie={"Calories"}
+          />
+          <Card
+            img={proteinIcon}
+            numberUnit={USER_MAIN_DATA[0].keyData.proteinCount}
+            unit={"g"}
+            categorie={"Proteines"}
+          />
+          <Card
+            img={carbIcon}
+            numberUnit={USER_MAIN_DATA[0].keyData.carbohydrateCount}
+            unit={"g"}
+            categorie={"Glucides"}
+          />
+          <Card
+            img={lipidIcon}
+            numberUnit={USER_MAIN_DATA[0].keyData.lipidCount}
+            unit={"g"}
+            categorie={"Lipides"}
+          />
+        </div>
       </div>
     </div>
   );
