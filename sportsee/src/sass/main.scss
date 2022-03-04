@@ -2,7 +2,9 @@
 @import "./base/typography";
 
 @import "./layout/header.scss";
+@import "./layout/mainPages";
 @import "./layout/verticalLayout";
+@import "./layout/home";
 @import "./layout/user-welcome";
 @import "./layout/dailyActivity";
 @import "./layout/durationSessions";
@@ -10,3 +12,4 @@
 @import "./layout/score";
 @import "./layout/containerChartsCards";
 @import "./layout/card";
+@import "./layout/error404";

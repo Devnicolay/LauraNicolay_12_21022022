@@ -1,7 +1,6 @@
 import {
   BarChart,
   Bar,
-  Cell,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -10,50 +9,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-const USER_ACTIVITY = [
-  {
-    userId: 12,
-    sessions: [
-      {
-        day: "2020-07-01",
-        kilogram: 80,
-        calories: 240,
-      },
-      {
-        day: "2020-07-02",
-        kilogram: 80,
-        calories: 220,
-      },
-      {
-        day: "2020-07-03",
-        kilogram: 81,
-        calories: 280,
-      },
-      {
-        day: "2020-07-04",
-        kilogram: 81,
-        calories: 290,
-      },
-      {
-        day: "2020-07-05",
-        kilogram: 80,
-        calories: 160,
-      },
-      {
-        day: "2020-07-06",
-        kilogram: 78,
-        calories: 162,
-      },
-      {
-        day: "2020-07-07",
-        kilogram: 76,
-        calories: 390,
-      },
-    ],
-  },
-];
-
-function DailyActivity() {
+function DailyActivity({ dataActivity }) {
   return (
     <div className="container-daily-activity">
       <h2>Activité quotidienne</h2>
@@ -61,7 +17,7 @@ function DailyActivity() {
         <BarChart
           width={500}
           height={300}
-          data={USER_ACTIVITY[0].sessions}
+          data={dataActivity && dataActivity.sessions}
           margin={{
             top: 5,
             right: 30,
@@ -129,8 +85,8 @@ function CustomToolTip({ active, payload }) {
   if (active) {
     return (
       <div className="tooltip">
-        <p>{`${payload[0].value}`}kg</p>
-        <p>{`${payload[1].value}`}kcal</p>
+        <p>{`${payload && payload[0].value}`}kg</p>
+        <p>{`${payload && payload[1].value}`}kcal</p>
       </div>
     );
   }

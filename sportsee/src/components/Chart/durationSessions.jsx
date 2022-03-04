@@ -3,49 +3,11 @@ import {
   Line,
   XAxis,
   YAxis,
-  CartesianGrid,
   Tooltip,
-  Legend,
   ResponsiveContainer,
 } from "recharts";
 
-const USER_AVERAGE_SESSIONS = [
-  {
-    userId: 12,
-    sessions: [
-      {
-        day: 1,
-        sessionLength: 30,
-      },
-      {
-        day: 2,
-        sessionLength: 23,
-      },
-      {
-        day: 3,
-        sessionLength: 45,
-      },
-      {
-        day: 4,
-        sessionLength: 50,
-      },
-      {
-        day: 5,
-        sessionLength: 0,
-      },
-      {
-        day: 6,
-        sessionLength: 0,
-      },
-      {
-        day: 7,
-        sessionLength: 60,
-      },
-    ],
-  },
-];
-
-function DurationSession() {
+function DurationSession({ dataAverageSessions }) {
   return (
     <div className="container-duration-sessions">
       <h2>Durée moyenne des sessions</h2>
@@ -53,7 +15,7 @@ function DurationSession() {
         <LineChart
           width={300}
           height={100}
-          data={USER_AVERAGE_SESSIONS[0].sessions}
+          data={dataAverageSessions && dataAverageSessions.sessions}
         >
           <Line
             type="monotone"
@@ -99,7 +61,7 @@ function CustomToolTip({ active, payload }) {
   if (active) {
     return (
       <div className="tooltip">
-        <p>{`${payload[0].value}`} min</p>
+        <p>{`${payload && payload[0].value}`} min</p>
       </div>
     );
   }

@@ -1,0 +1,20 @@
+.home-container {
+  text-align: center;
+  grid-area: 1 / 2 / 2 / 11;
+  margin-top: 3em;
+  h1 {
+    color: red;
+    font-size: 48px;
+  }
+  .link {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5em;
+    a {
+      text-decoration: none;
+      color: black;
+      margin: 1em;
+      font-size: 18px;
+    }
+  }
+}
