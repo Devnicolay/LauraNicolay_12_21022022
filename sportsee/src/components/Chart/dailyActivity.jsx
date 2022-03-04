@@ -17,7 +17,7 @@ function DailyActivity({ dataActivity }) {
         <BarChart
           width={500}
           height={300}
-          data={dataActivity && dataActivity.sessions}
+          data={dataActivity.sessions}
           margin={{
             top: 5,
             right: 30,
@@ -85,8 +85,8 @@ function CustomToolTip({ active, payload }) {
   if (active) {
     return (
       <div className="tooltip">
-        <p>{`${payload && payload[0].value}`}kg</p>
-        <p>{`${payload && payload[1].value}`}kcal</p>
+        <p>{`${payload[0].value}`}kg</p>
+        <p>{`${payload[1].value}`}kcal</p>
       </div>
     );
   }

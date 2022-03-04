@@ -101,11 +101,15 @@ function Dashboard() {
       </div>
       <div className="container-charts-cards">
         <div className="charts">
-          <DailyActivity dataActivity={activityData} />
+          {activityData && <DailyActivity dataActivity={activityData} />}
           <div className="charts-square">
-            <DurationSession dataAverageSessions={averageSessionsData} />
-            <Performance dataPerformance={performanceData} />
-            <Score dataUser={userData} />
+            {averageSessionsData && (
+              <DurationSession dataAverageSessions={averageSessionsData} />
+            )}
+            {performanceData && (
+              <Performance dataPerformance={performanceData} />
+            )}
+            {userData && <Score dataUser={userData} />}
           </div>
         </div>
         <div className="cards">

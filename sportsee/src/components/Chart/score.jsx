@@ -1,7 +1,7 @@
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 
 function Score({ dataUser }) {
-  const score = dataUser && dataUser.todayScore;
+  const score = dataUser.todayScore;
   const data = [
     { name: "score", value: score },
     { name: "total", value: 1 - score },
@@ -34,7 +34,7 @@ function Score({ dataUser }) {
         </PieChart>
       </ResponsiveContainer>
       <div className="legend">
-        <p className="pourcent">{dataUser && dataUser.todayScore * 100} %</p>
+        <p className="pourcent">{dataUser.todayScore * 100} %</p>
         <p className="text-legend">de votre</p>
         <p className="text-legend">objectif</p>
       </div>

@@ -12,11 +12,7 @@ function DurationSession({ dataAverageSessions }) {
     <div className="container-duration-sessions">
       <h2>Durée moyenne des sessions</h2>
       <ResponsiveContainer width="100%" height="100%">
-        <LineChart
-          width={300}
-          height={100}
-          data={dataAverageSessions && dataAverageSessions.sessions}
-        >
+        <LineChart width={300} height={100} data={dataAverageSessions.sessions}>
           <Line
             type="monotone"
             dataKey="sessionLength"
@@ -61,7 +57,7 @@ function CustomToolTip({ active, payload }) {
   if (active) {
     return (
       <div className="tooltip">
-        <p>{`${payload && payload[0].value}`} min</p>
+        <p>{`${payload[0].value}`} min</p>
       </div>
     );
   }
