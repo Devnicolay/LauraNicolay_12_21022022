@@ -1,3 +1,14 @@
+import React from "react";
+import PropTypes from "prop-types";
+
+/**
+ * @param {string} img image of categorie
+ * @param {number} numberUnit number of calorie, protein, carbohydrate or lipid
+ * @param {string} unit unité of calorie, protein, carbohydrate or lipid
+ * @param {string} categorie calorie, protein, carbohydrate or lipid
+ * @returns card used for calorie, protein, carbohydrate and lipid
+ */
+
 function Card({ img, numberUnit, unit, categorie }) {
   return (
     <div className="card">
@@ -12,5 +23,12 @@ function Card({ img, numberUnit, unit, categorie }) {
     </div>
   );
 }
+
+Card.propTypes = {
+  img: PropTypes.string.isRequired,
+  numberUnit: PropTypes.number,
+  unit: PropTypes.string.isRequired,
+  categorie: PropTypes.string.isRequired,
+};
 
 export default Card;

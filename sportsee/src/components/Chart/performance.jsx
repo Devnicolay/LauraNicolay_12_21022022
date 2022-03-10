@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Radar,
   RadarChart,
@@ -6,6 +7,13 @@ import {
   PolarRadiusAxis,
   ResponsiveContainer,
 } from "recharts";
+import PropTypes from "prop-types";
+
+/**
+ *
+ * @param {object} dataPerformance user data of performance
+ * @returns radar chart of performance
+ */
 
 function Performance({ dataPerformance }) {
   const dataKind = dataPerformance.kind;
@@ -25,7 +33,7 @@ function Performance({ dataPerformance }) {
           <PolarAngleAxis
             dataKey="kind"
             tickFormatter={formattedKind}
-            tick={{ fill: "#FFFFFF", fontSize: "12px" }}
+            tick={{ fill: "#FFFFFF", fontSize: "12px", dy: 4 }}
           />
           <PolarRadiusAxis tickCount={6} tick={false} axisLine={false} />
           <Radar
@@ -39,5 +47,9 @@ function Performance({ dataPerformance }) {
     </div>
   );
 }
+
+Performance.propTypes = {
+  dataPerformance: PropTypes.object,
+};
 
 export default Performance;

@@ -1,6 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+/**
+ *
+ * @returns page home with link to go on the user dashboard
+ */
+
 function Home() {
   return (
     <div className="home-container">

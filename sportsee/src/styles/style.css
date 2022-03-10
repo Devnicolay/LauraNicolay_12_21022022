@@ -40,7 +40,6 @@ body {
 .main .main-error404 {
   grid-area: 1/2/2/11;
   display: grid;
-  justify-content: center;
 }
 
 .vertical-layout {
@@ -221,6 +220,8 @@ body {
 }
 
 .main-error404 {
+  margin-left: 15em;
+  text-align: center;
   color: red;
 }
 .main-error404 .error-404 {

@@ -1,3 +1,4 @@
+import React from "react";
 import {
   BarChart,
   Bar,
@@ -8,6 +9,13 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
+import PropTypes from "prop-types";
+
+/**
+ *
+ * @param {object} dataActivity  data of user activity
+ * @returns Chart bar of daily activity
+ */
 
 function DailyActivity({ dataActivity }) {
   return (
@@ -92,5 +100,21 @@ function CustomToolTip({ active, payload }) {
   }
   return null;
 }
+
+DailyActivity.propTypes = {
+  dataActivity: PropTypes.object.isRequired,
+};
+
+CustomToolTip.propTypes = {
+  active: PropTypes.bool,
+  payload: PropTypes.arrayOf({
+    value: PropTypes.number,
+  }),
+};
+
+CustomToolTip.defaultProps = {
+  active: "-",
+  payload: "-",
+};
 
 export default DailyActivity;

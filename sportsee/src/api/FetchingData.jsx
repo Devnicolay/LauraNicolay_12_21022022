@@ -1,5 +1,15 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
+import {
+  getUser,
+  getUserActivity,
+  getUserAverageSession,
+  getUserPerformance,
+} from "../service/getUser";
+
+/**
+ * @function useFetchingData Get datas of user: user information, user activity, user average session, user performance
+ * @param {number} userId Id of the user
+ */
 
 function useFetchingData(userId) {
   /**
@@ -8,11 +18,10 @@ function useFetchingData(userId) {
   const [user, setUser] = useState([]);
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:3000/user/${userId.id}`)
+    getUser(userId)
       .then((res) => {
         console.log(res);
-        setUser(res.data);
+        setUser(res);
       })
       .catch((err) => {
         console.log(err);
@@ -27,11 +36,10 @@ function useFetchingData(userId) {
   const [activity, setActivity] = useState([]);
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:3000/user/${userId.id}/activity`)
+    getUserActivity(userId)
       .then((res) => {
         console.log(res);
-        setActivity(res.data);
+        setActivity(res);
       })
       .catch((err) => {
         console.log(err);
@@ -46,11 +54,10 @@ function useFetchingData(userId) {
   const [averageSessions, setAverageSessions] = useState([]);
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:3000/user/${userId.id}/average-sessions`)
+    getUserAverageSession(userId)
       .then((res) => {
         console.log(res);
-        setAverageSessions(res.data);
+        setAverageSessions(res);
       })
       .catch((err) => {
         console.log(err);
@@ -65,11 +72,10 @@ function useFetchingData(userId) {
   const [performance, setPerformance] = useState([]);
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:3000/user/${userId.id}/performance`)
+    getUserPerformance(userId)
       .then((res) => {
         console.log(res);
-        setPerformance(res.data);
+        setPerformance(res);
       })
       .catch((err) => {
         console.log(err);

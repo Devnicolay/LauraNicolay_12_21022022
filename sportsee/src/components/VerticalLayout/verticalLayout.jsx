@@ -1,7 +1,13 @@
+import React from "react";
 import yoga from "../../assets/yoga.png";
 import swimming from "../../assets/swimming.png";
 import cycling from "../../assets/cycling.png";
 import training from "../../assets/training.png";
+
+/**
+ *
+ * @returns container for vertical layout
+ */
 
 function VerticalLayout() {
   return (

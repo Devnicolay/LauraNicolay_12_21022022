@@ -1,3 +1,4 @@
+import React from "react";
 import {
   LineChart,
   Line,
@@ -6,6 +7,13 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
+import PropTypes from "prop-types";
+
+/**
+ *
+ * @param {object} dataAverageSessions data of user average session
+ * @returns line chart of average duration of sessions
+ */
 
 function DurationSession({ dataAverageSessions }) {
   return (
@@ -74,6 +82,23 @@ const CustomHover = ({ points }) => {
       fill="rgba(0, 0, 0, 0.1)"
     />
   );
+};
+
+DurationSession.propTypes = {
+  dataAverageSessions: PropTypes.object,
+};
+
+CustomToolTip.propTypes = {
+  active: PropTypes.bool,
+  payload: PropTypes.array,
+};
+
+CustomHover.propTypes = {
+  points: PropTypes.number,
+  x: PropTypes.number,
+  y: PropTypes.number,
+  width: PropTypes.number,
+  height: PropTypes.number,
 };
 
 export default DurationSession;

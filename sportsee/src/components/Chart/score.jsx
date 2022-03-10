@@ -1,4 +1,12 @@
+import React from "react";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
+import PropTypes from "prop-types";
+
+/**
+ *
+ * @param {object} dataUser data of user
+ * @returns pie chart of user goal
+ */
 
 function Score({ dataUser }) {
   const score = dataUser.todayScore;
@@ -41,5 +49,10 @@ function Score({ dataUser }) {
     </div>
   );
 }
+
+Score.propTypes = {
+  dataUser: PropTypes.object,
+  data: PropTypes.array,
+};
 
 export default Score;

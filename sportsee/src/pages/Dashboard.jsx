@@ -12,6 +12,15 @@ import proteinIcon from "../assets/protein-icon.png";
 import carbIcon from "../assets/carbs-icon.png";
 import lipidIcon from "../assets/fat-icon.png";
 
+/**
+ * @param {number} userId id of user taken from url
+ * @param {object} userData data of user
+ * @param {object} activityData data of user activity
+ * @param {object} dataAverageSessions data of user average session
+ * @param {object} performanceData data of user performance
+ * @returns dashboard of user with component for charts
+ */
+
 function Dashboard() {
   const userId = useParams();
 
