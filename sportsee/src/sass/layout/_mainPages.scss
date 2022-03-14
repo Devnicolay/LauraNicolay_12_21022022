@@ -1,7 +1,7 @@
 .main {
   display: grid;
   grid-template-columns: repeat(11, 1fr);
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr;
   .vertical-layout {
     grid-area: 1 / 1 / 2 / 2;
   }

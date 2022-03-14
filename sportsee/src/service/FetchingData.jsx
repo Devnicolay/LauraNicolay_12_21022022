@@ -5,6 +5,7 @@ import {
   getUserAverageSession,
   getUserPerformance,
 } from "../service/getUser";
+import { getData } from "./config";
 import { USER_MAIN_DATA } from "./mockData";
 import { USER_ACTIVITY } from "./mockData";
 import { USER_AVERAGE_SESSIONS } from "./mockData";
@@ -26,21 +27,28 @@ function useFetchingData(userId) {
   const [user, setUser] = useState([]);
 
   useEffect(() => {
-    getUser(userId)
-      .then((res) => {
-        if (!res.ok) {
+    if (getData === "api") {
+      getUser(userId)
+        .then((res) => {
           console.log(res);
           setUser(res);
-        } else {
-          setUser(USER_MAIN_DATA);
-        }
-      })
-      .catch((err) => {
-        console.log(err);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } else {
+      const dataUser = USER_MAIN_DATA.find((user) => {
+        return user.id == userId.id;
       });
+
+      console.log({ data: dataUser });
+
+      setUser({ data: dataUser });
+    }
   }, []);
 
   const userData = user.data;
+  console.log(userData);
 
   /**
    * activity datas of user
@@ -48,18 +56,22 @@ function useFetchingData(userId) {
   const [activity, setActivity] = useState([]);
 
   useEffect(() => {
-    getUserActivity(userId)
-      .then((res) => {
-        if (!res.ok) {
+    if (getData === "api") {
+      getUserActivity(userId)
+        .then((res) => {
           console.log(res);
           setActivity(res);
-        } else {
-          setActivity(USER_ACTIVITY);
-        }
-      })
-      .catch((err) => {
-        console.log(err);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } else {
+      const dataActivity = USER_ACTIVITY.find((user) => {
+        return user.id == userId.id;
       });
+
+      setUser({ data: dataActivity });
+    }
   }, []);
 
   const activityData = activity.data;
@@ -70,18 +82,22 @@ function useFetchingData(userId) {
   const [averageSessions, setAverageSessions] = useState([]);
 
   useEffect(() => {
-    getUserAverageSession(userId)
-      .then((res) => {
-        if (!res.ok) {
+    if (getData === "api") {
+      getUserAverageSession(userId)
+        .then((res) => {
           console.log(res);
           setAverageSessions(res);
-        } else {
-          setAverageSessions(USER_AVERAGE_SESSIONS);
-        }
-      })
-      .catch((err) => {
-        console.log(err);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } else {
+      const dataAverageSessions = USER_AVERAGE_SESSIONS.find((user) => {
+        return user.id == userId.id;
       });
+
+      setUser({ data: dataAverageSessions });
+    }
   }, []);
 
   const averageSessionsData = averageSessions.data;
@@ -92,18 +108,22 @@ function useFetchingData(userId) {
   const [performance, setPerformance] = useState([]);
 
   useEffect(() => {
-    getUserPerformance(userId)
-      .then((res) => {
-        if (!res.ok) {
+    if (getData === "api") {
+      getUserPerformance(userId)
+        .then((res) => {
           console.log(res);
           setPerformance(res);
-        } else {
-          setPerformance(USER_PERFORMANCE);
-        }
-      })
-      .catch((err) => {
-        console.log(err);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } else {
+      const dataPerformance = USER_PERFORMANCE.find((user) => {
+        return user.id == userId.id;
       });
+
+      setUser({ data: dataPerformance });
+    }
   }, []);
 
   const performanceData = performance.data;

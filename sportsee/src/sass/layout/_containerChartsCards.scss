@@ -14,3 +14,15 @@
     }
   }
 }
+
+/* For screen smaller than 1315px */
+@media screen and (max-width: 1315px) {
+  .container-main {
+    .container-charts-cards {
+      flex-direction: column;
+      .cards {
+        display: flex;
+      }
+    }
+  }
+}

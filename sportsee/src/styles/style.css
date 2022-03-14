@@ -31,7 +31,7 @@ body {
 .main {
   display: grid;
   grid-template-columns: repeat(11, 1fr);
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr;
 }
 .main .vertical-layout {
   grid-area: 1/1/2/2;
@@ -196,6 +196,15 @@ body {
   margin-top: 2em;
 }
 
+/* For screen smaller than 1315px */
+@media screen and (max-width: 1315px) {
+  .container-main .container-charts-cards {
+    flex-direction: column;
+  }
+  .container-main .container-charts-cards .cards {
+    display: flex;
+  }
+}
 .cards .card {
   display: flex;
   margin: 3em 0em 0em 2em;
@@ -219,12 +228,6 @@ body {
   margin: 0;
 }
 
-/* For screen smaller than 1315px */
-@media screen and (max-width: 1325px) {
-  .cards {
-    grid-area: 2/2/3/11;
-  }
-}
 .main-error404 {
   margin-left: 15em;
   text-align: center;

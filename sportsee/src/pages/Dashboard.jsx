@@ -27,6 +27,8 @@ function Dashboard() {
   const { userData, activityData, averageSessionsData, performanceData } =
     useFetchingData(userId);
 
+  console.log(userData);
+
   return (
     <div className="container-main">
       <div className="user-welcome">

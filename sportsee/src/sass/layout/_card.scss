@@ -24,10 +24,3 @@
     }
   }
 }
-
-/* For screen smaller than 1315px */
-@media screen and (max-width: 1325px) {
-  .cards {
-    grid-area: 2 / 2 / 3 / 11;
-  }
-}
