@@ -76,7 +76,7 @@ const CustomHover = ({ points }) => {
   return (
     <rect
       x={points[0].x}
-      y="0"
+      y={0}
       height="100%"
       width="100%"
       fill="rgba(0, 0, 0, 0.1)"
@@ -93,8 +93,13 @@ CustomToolTip.propTypes = {
   payload: PropTypes.array,
 };
 
+CustomToolTip.defaultProps = {
+  active: null,
+  payload: null,
+};
+
 CustomHover.propTypes = {
-  points: PropTypes.number,
+  points: PropTypes.array,
   x: PropTypes.number,
   y: PropTypes.number,
   width: PropTypes.number,

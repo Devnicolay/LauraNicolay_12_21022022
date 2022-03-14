@@ -31,7 +31,7 @@ body {
 .main {
   display: grid;
   grid-template-columns: repeat(11, 1fr);
-  grid-template-rows: 1fr;
+  grid-template-rows: 1fr 1fr;
 }
 .main .vertical-layout {
   grid-area: 1/1/2/2;
@@ -219,6 +219,12 @@ body {
   margin: 0;
 }
 
+/* For screen smaller than 1315px */
+@media screen and (max-width: 1325px) {
+  .cards {
+    grid-area: 2/2/3/11;
+  }
+}
 .main-error404 {
   margin-left: 15em;
   text-align: center;

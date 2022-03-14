@@ -12,9 +12,11 @@ import {
 import PropTypes from "prop-types";
 
 /**
- *
+ * The BarChart of user for daily activity
+ * @component
  * @param {object} dataActivity  data of user activity
- * @returns Chart bar of daily activity
+ * @param {string} day date of activity
+ * @returns {reactElement} Chart bar of daily activity
  */
 
 function DailyActivity({ dataActivity }) {
@@ -107,14 +109,12 @@ DailyActivity.propTypes = {
 
 CustomToolTip.propTypes = {
   active: PropTypes.bool,
-  payload: PropTypes.arrayOf({
-    value: PropTypes.number,
-  }),
+  payload: PropTypes.array,
 };
 
 CustomToolTip.defaultProps = {
-  active: "-",
-  payload: "-",
+  active: null,
+  payload: null,
 };
 
 export default DailyActivity;

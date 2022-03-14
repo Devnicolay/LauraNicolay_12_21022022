@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 /**
+ * Card
  * @param {string} img image of categorie
  * @param {number} numberUnit number of calorie, protein, carbohydrate or lipid
  * @param {string} unit unité of calorie, protein, carbohydrate or lipid

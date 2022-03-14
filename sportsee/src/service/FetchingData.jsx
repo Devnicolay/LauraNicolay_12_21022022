@@ -5,10 +5,18 @@ import {
   getUserAverageSession,
   getUserPerformance,
 } from "../service/getUser";
+import { USER_MAIN_DATA } from "./mockData";
+import { USER_ACTIVITY } from "./mockData";
+import { USER_AVERAGE_SESSIONS } from "./mockData";
+import { USER_PERFORMANCE } from "./mockData";
 
 /**
- * @function useFetchingData Get datas of user: user information, user activity, user average session, user performance
+ * @function useFetchingData Get Api datas of user: user information, user activity, user average session, user performance
  * @param {number} userId Id of the user
+ * @param {object} USER_MAIN_DATA Mock data of user
+ * @param {object} USER_ACTIVITY Mock data of user activity
+ * @param {object} USER_AVERAGE_SESSIONS Mock data of user average session
+ * @param {object} USER_PERFORMANCE Mock data of user performance
  */
 
 function useFetchingData(userId) {
@@ -20,8 +28,12 @@ function useFetchingData(userId) {
   useEffect(() => {
     getUser(userId)
       .then((res) => {
-        console.log(res);
-        setUser(res);
+        if (!res.ok) {
+          console.log(res);
+          setUser(res);
+        } else {
+          setUser(USER_MAIN_DATA);
+        }
       })
       .catch((err) => {
         console.log(err);
@@ -38,8 +50,12 @@ function useFetchingData(userId) {
   useEffect(() => {
     getUserActivity(userId)
       .then((res) => {
-        console.log(res);
-        setActivity(res);
+        if (!res.ok) {
+          console.log(res);
+          setActivity(res);
+        } else {
+          setActivity(USER_ACTIVITY);
+        }
       })
       .catch((err) => {
         console.log(err);
@@ -56,8 +72,12 @@ function useFetchingData(userId) {
   useEffect(() => {
     getUserAverageSession(userId)
       .then((res) => {
-        console.log(res);
-        setAverageSessions(res);
+        if (!res.ok) {
+          console.log(res);
+          setAverageSessions(res);
+        } else {
+          setAverageSessions(USER_AVERAGE_SESSIONS);
+        }
       })
       .catch((err) => {
         console.log(err);
@@ -74,8 +94,12 @@ function useFetchingData(userId) {
   useEffect(() => {
     getUserPerformance(userId)
       .then((res) => {
-        console.log(res);
-        setPerformance(res);
+        if (!res.ok) {
+          console.log(res);
+          setPerformance(res);
+        } else {
+          setPerformance(USER_PERFORMANCE);
+        }
       })
       .catch((err) => {
         console.log(err);

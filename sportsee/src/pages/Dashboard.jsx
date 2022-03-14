@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import React from "react";
-import useFetchingData from "../api/FetchingData";
+import useFetchingData from "../service/FetchingData";
 
 import DailyActivity from "../components/Chart/dailyActivity";
 import DurationSession from "../components/Chart/durationSessions";
