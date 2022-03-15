@@ -41,9 +41,8 @@ function useFetchingData(userId) {
         return user.id == userId.id;
       });
 
-      console.log({ data: dataUser });
-
-      setUser({ data: dataUser });
+      const datas = { data: dataUser };
+      setUser(datas);
     }
   }, []);
 
@@ -67,10 +66,11 @@ function useFetchingData(userId) {
         });
     } else {
       const dataActivity = USER_ACTIVITY.find((user) => {
-        return user.id == userId.id;
+        return user.userId == userId.id;
       });
 
-      setUser({ data: dataActivity });
+      const datas = { data: dataActivity };
+      setActivity(datas);
     }
   }, []);
 
@@ -93,10 +93,11 @@ function useFetchingData(userId) {
         });
     } else {
       const dataAverageSessions = USER_AVERAGE_SESSIONS.find((user) => {
-        return user.id == userId.id;
+        return user.userId == userId.id;
       });
 
-      setUser({ data: dataAverageSessions });
+      const datas = { data: dataAverageSessions };
+      setAverageSessions(datas);
     }
   }, []);
 
@@ -119,10 +120,11 @@ function useFetchingData(userId) {
         });
     } else {
       const dataPerformance = USER_PERFORMANCE.find((user) => {
-        return user.id == userId.id;
+        return user.userId == userId.id;
       });
 
-      setUser({ data: dataPerformance });
+      const datas = { data: dataPerformance };
+      setPerformance(datas);
     }
   }, []);
 
