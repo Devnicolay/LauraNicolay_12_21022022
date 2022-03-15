@@ -10,6 +10,7 @@ import { USER_MAIN_DATA } from "./mockData";
 import { USER_ACTIVITY } from "./mockData";
 import { USER_AVERAGE_SESSIONS } from "./mockData";
 import { USER_PERFORMANCE } from "./mockData";
+import { useNavigate } from "react-router-dom";
 
 /**
  * @function useFetchingData Get Api datas of user: user information, user activity, user average session, user performance
@@ -21,6 +22,7 @@ import { USER_PERFORMANCE } from "./mockData";
  */
 
 function useFetchingData(userId) {
+  const navigate = useNavigate();
   /**
    * informations datas of user
    */
@@ -35,11 +37,16 @@ function useFetchingData(userId) {
         })
         .catch((err) => {
           console.log(err);
+          navigate("/error");
         });
     } else {
       const dataUser = USER_MAIN_DATA.find((user) => {
         return user.id == userId.id;
       });
+
+      if (!dataUser) {
+        navigate("/error");
+      }
 
       const datas = { data: dataUser };
       setUser(datas);
@@ -47,7 +54,6 @@ function useFetchingData(userId) {
   }, []);
 
   const userData = user.data;
-  console.log(userData);
 
   /**
    * activity datas of user
@@ -63,11 +69,16 @@ function useFetchingData(userId) {
         })
         .catch((err) => {
           console.log(err);
+          navigate("/error");
         });
     } else {
       const dataActivity = USER_ACTIVITY.find((user) => {
         return user.userId == userId.id;
       });
+
+      if (!dataActivity) {
+        navigate("/error");
+      }
 
       const datas = { data: dataActivity };
       setActivity(datas);
@@ -90,11 +101,16 @@ function useFetchingData(userId) {
         })
         .catch((err) => {
           console.log(err);
+          navigate("/error");
         });
     } else {
       const dataAverageSessions = USER_AVERAGE_SESSIONS.find((user) => {
         return user.userId == userId.id;
       });
+
+      if (!dataAverageSessions) {
+        navigate("/error");
+      }
 
       const datas = { data: dataAverageSessions };
       setAverageSessions(datas);
@@ -117,11 +133,16 @@ function useFetchingData(userId) {
         })
         .catch((err) => {
           console.log(err);
+          navigate("/error");
         });
     } else {
       const dataPerformance = USER_PERFORMANCE.find((user) => {
         return user.userId == userId.id;
       });
+
+      if (!dataPerformance) {
+        navigate("/error");
+      }
 
       const datas = { data: dataPerformance };
       setPerformance(datas);

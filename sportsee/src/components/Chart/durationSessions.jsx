@@ -21,13 +21,6 @@ function DurationSession({ dataAverageSessions }) {
       <h2>Durée moyenne des sessions</h2>
       <ResponsiveContainer width="100%" height="100%">
         <LineChart width={300} height={100} data={dataAverageSessions.sessions}>
-          <Line
-            type="monotone"
-            dataKey="sessionLength"
-            stroke="#FFFFFF"
-            strokeWidth={2}
-            dot={false}
-          />
           <XAxis
             dataKey="day"
             tick={{ fill: "#FFFFFF", dx: 20 }}
@@ -35,14 +28,13 @@ function DurationSession({ dataAverageSessions }) {
             axisLine={false}
             tickMargin={0}
             tickFormatter={formattedDay}
-            // padding={{ left: 10, right: 10 }}
           />
           <YAxis hide domain={["dataMin-10", "dataMax+20"]} />
           <Tooltip content={<CustomToolTip />} cursor={<CustomHover />} />
           <Line
             type="monotone"
             dataKey="sessionLength"
-            stroke="rgba(255, 255, 255, 0.6)"
+            stroke="#FFFFFF"
             strokeWidth={2}
             activeDot={{
               background: "#FFFFFF",

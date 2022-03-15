@@ -27,7 +27,6 @@ function Score({ dataUser }) {
             innerRadius={88}
             outerRadius={100}
             cornerRadius={10}
-            paddingAngle={5}
             dataKey="value"
           >
             <Cell fill={"#e60000"} />

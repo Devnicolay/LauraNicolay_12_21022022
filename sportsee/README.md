@@ -13,7 +13,7 @@ To start this project, you must launch the back-end first, and the front-end.
 
 ## Back-end
 
-- Clone this repository [Repository Back-end](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard)
+- Clone this repository [Repository Back-end](https://github.com/Devnicolay/P9-front-end-dashboard)
 - Install dependencies with command
 
 ```sh
